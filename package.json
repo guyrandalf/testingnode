@@ -1,0 +1,20 @@
+{
+  "name": "netflix-clone",
+  "version": "1.0.0",
+  "description": "netflix clone HTML CSS JavaScript",
+  "source": "src/index.html",
+  "repository": "https://github.com/fedpre/netflix-clone.git",
+  "author": "Federico Pregnolato",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "history": "^5.3.0",
+    "parcel": "^2.9.3"
+  },
+  "devDependencies": {
+    "parcel-plugin-static-files-copy": "^2.6.0"
+  }
+}

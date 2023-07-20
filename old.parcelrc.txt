@@ -1,0 +1,14 @@
+{
+    "extends": "@parcel/config-default",
+    "plugins": {
+      "parcel-plugin-static-files-copy": {
+        "patterns": [
+          {
+            "glob": "src/**/*.html",
+            "distDir": "./dist"
+          }
+        ]
+      }
+    }
+  }
+  
