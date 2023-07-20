@@ -118,10 +118,14 @@ a {
 }
 
 .movie-title {
-	font-size: 1.5em;
-	font-weight: 700;
-	margin-left: 0.5em;
-	margin-right: 0.5em;
+	margin-left: .5em;
+    margin-right: .5em;
+    font-size: 1.5em;
+    font-weight: 700;    
+    place-content: center;
+    color: black;
+    font-size: 16px;
+    display: flex;
 }
 
 navbar {

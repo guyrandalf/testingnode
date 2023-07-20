@@ -1,32 +1,23 @@
-export function createElement(type, props = {}, children = []) {
-  const element = document.createElement(type);
+// In utils.js file (if that's where the createElement function is defined)
 
-  // props: {textContent: "Hello world!", id: "header1", "data-productId": 123, ...}
-  Object.entries(props).forEach(([key, value]) => {
-    if(~key.indexOf('-')) {
-      element.setAttribute(key, value); // data attributes
-    } else {
-      element[key] = value;
+export function createElement(tag, attributes, children) {
+  const element = document.createElement(tag);
+
+  if (attributes) {
+    for (const key in attributes) {
+      element[key] = attributes[key];
     }
-  });
+  }
 
-  children.forEach((child) => {
-    element.appendChild(child);
-  });
+  if (children && children.length > 0) {
+    for (const child of children) {
+      if (typeof child === "string") {
+        element.appendChild(document.createTextNode(child));
+      } else {
+        element.appendChild(child);
+      }
+    }
+  }
 
   return element;
-}
-
-// export function footerDate() {
-//   const dateNode = document.querySelector('.footer-date')
-//   dateNode.innerHTML = new Date().getFullYear()
-// }
-
-// retrieve data from localstorage
-export function getLocalStorage(key) {
-  return JSON.parse(localStorage.getItem(key))
-}
-// save data to local storage
-export function setLocalStorage(key, data) {
-  localStorage.setItem(key, JSON.stringify(data))
 }
